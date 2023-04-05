@@ -1,0 +1,27 @@
+<!-- <h1>Data</h1>
+
+<button (click)="getData()">Get Data</button>
+<button (click)="postData()">Post Data</button>
+<button (click)="deleteData()">Delete Data</button>
+
+<ul>
+  <p *ngFor="let item of items">({{ item.id }}) {{ item.title }}</p>
+</ul> -->
+<div class="background">
+  <div *ngFor="let post of posts">
+    {{ post.title }}
+    <button (click)="deletePost(post.id)">Delete</button>
+  </div>
+  <form (ngSubmit)="addPost()">
+    <input [(ngModel)]="newPost" [ngModelOptions]="{standalone: true}" placeholder="Enter a new post">
+    <button type="submit">Add</button>
+  </form>
+
+  <button (click)="getData()">Get Data</button>
+
+  <ul>
+    <p *ngFor="let item of items">({{ item.id }}) {{ item.title }}</p>
+  </ul> 
+
+</div>
+
